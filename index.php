@@ -2,17 +2,18 @@
 
 class Pessoa {
     // esses sao os atributos
-    public string $nome;
-    public int $idade;
-    public bool $status;
+    public $nome;
+    public $idade;
 
-    public function Falar(){
-        echo 'falou';
+    public function Falar(string $falar): string
+    {
+        // retorne isto nome 
+        return $falar . $this->nome;
     }
 }
 
 $dudu = new Pessoa();
 $dudu->nome = 'eduardo';
 $dudu->idade = '16';
-$dudu->status = false;
-var_dump($dudu);
+
+echo $dudu->Falar('ola meu nome é: ');
