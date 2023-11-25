@@ -7,7 +7,7 @@ class Login {
 
     public function __construct($email, $senha, $nome)
     {
-        $this->nome = $nome;
+        $this->setNome($nome);
         $this->setEmail($email);
         $this->setSenha($senha);
     }
@@ -15,6 +15,11 @@ class Login {
     public function getNome(): string
     {
         return $this->nome;
+    }
+
+    public function setNome(string $n): void
+    {
+        $this->nome = $n;
     }
 
     public function getEmail(): string 
@@ -52,6 +57,10 @@ class Login {
     }
 }
 
-$usuario = new Login('eduardo@gmail.com', '1234', 'eduardo');
+$email = 'eduardo@gmail.com';
+$senha = '1234';
+$nome = 'eduardo';
 
+$usuario = new Login($email, $senha, $nome);
+$usuario->getNome();
 $usuario->logar();
